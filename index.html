@@ -3,17 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Thu Mua Cáp Đồng Giá Cao Toàn Quốc - Công Ty Thu Mua Phế Liệu Đức Minh
-    </title>
+    <title>Thu Mua Phế Liệu, Vật Tư Tồn Kho Giá Cao - Công Ty Đức Minh</title>
 
     <style>
       /* === CÀI ĐẶT CHUNG & BIẾN MÀU === */
       :root {
-        --primary-color: #e90b0b; /* Xanh lá đậm */
-        --secondary-color: #ff8c00; /* Cam đậm cho nút CTA */
-        --phone-color: #d9534f; /* Màu đỏ cho nút gọi */
-        --zalo-color: #0068ff; /* Màu xanh cho nút Zalo */
+        --primary-color: #e90b0b;
+        --secondary-color: #ff8c00;
+        --phone-color: #d9534f;
+        --zalo-color: #0068ff;
         --text-dark: #333;
         --text-light: #fff;
         --bg-light: #fff;
@@ -68,6 +66,7 @@
       img {
         max-width: 100%;
         height: auto;
+        display: block;
       }
 
       a {
@@ -114,7 +113,7 @@
         display: flex;
       }
       .navbar .nav-links li {
-        margin-left: 25px;
+        margin-left: 15px;
       }
       .navbar .nav-links a {
         color: var(--text-dark);
@@ -123,6 +122,8 @@
         padding: 5px 0;
         border-bottom: 2px solid transparent;
         transition: all 0.3s ease;
+        font-size: 0.85rem;
+        white-space: nowrap;
       }
       .navbar .nav-links a:hover,
       .navbar .nav-links a.active {
@@ -160,10 +161,12 @@
         background-size: cover;
         background-position: center;
         opacity: 0;
-        transition: opacity 1.5s ease-in-out;
+        transform: scale(1);
+        transition: opacity 1.5s ease-in-out, transform 8s ease-out;
       }
       .slide.active {
         opacity: 1;
+        transform: scale(1.05);
       }
       .hero-overlay {
         position: absolute;
@@ -171,16 +174,22 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0.2)
+        );
       }
       .hero-content {
         position: relative;
         z-index: 2;
+        padding: 0 20px;
       }
       .hero h1 {
         font-size: 3.5rem;
         margin-bottom: 15px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        line-height: 1.2;
       }
       .hero p {
         font-size: 1.3rem;
@@ -194,6 +203,7 @@
         font-weight: bold;
         text-transform: uppercase;
         transition: transform 0.3s ease, background-color 0.3s ease;
+        display: inline-block;
       }
       .btn:hover {
         background-color: #e67e22;
@@ -231,7 +241,7 @@
         font-weight: bold;
       }
 
-      /* === WHY CHOOSE US SECTION === */
+      /* === WHY CHOOSE US & DANH MỤC THU MUA === */
       #why-us {
         background: var(--bg-grey);
       }
@@ -257,6 +267,47 @@
         font-size: 1.2rem;
         margin-bottom: 10px;
       }
+      .machines-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+      }
+      .machine-item {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--bg-light);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .machine-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      }
+      .machine-item img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+      .machine-item .caption {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+      .machine-item .caption .check-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        background-color: #dff0d8;
+        color: #3c763d;
+        border-radius: 50%;
+        margin-right: 10px;
+        font-weight: bold;
+      }
 
       /* === PRICE TABLE === */
       .price-table {
@@ -281,92 +332,6 @@
       .price-table .price-contact {
         font-weight: bold;
         color: #d9534f;
-      }
-
-      /* === PHẦN sản phẩm thu mua === */
-      .machines-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-      }
-      .machine-item {
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        overflow: hidden;
-        background: var(--bg-light);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .machine-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-      }
-      .machine-item img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        display: block;
-      }
-      .machine-item .caption {
-        padding: 15px;
-        display: flex;
-        align-items: center;
-        font-weight: 500;
-      }
-      .machine-item .caption .check-icon {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background-color: #dff0d8;
-        color: #3c763d;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 20px;
-        margin-right: 10px;
-        font-weight: bold;
-      }
-
-      /* === PHẦN MÁY MÓC CŨ === */
-      .machines1-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-      }
-      .machine1-item {
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        overflow: hidden;
-        background: var(--bg-light);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .machine1-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-      }
-      .machine1-item img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        display: block;
-      }
-      .machine1-item .caption {
-        padding: 15px;
-        display: flex;
-        align-items: center;
-        font-weight: 500;
-      }
-      .machine1-item .caption .check-icon {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background-color: #dff0d8;
-        color: #3c763d;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 20px;
-        margin-right: 10px;
-        font-weight: bold;
       }
 
       /* === PROCESS SECTION === */
@@ -420,8 +385,8 @@
       .footer-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        padding-bottom: 40px;
+        gap: 40px;
+        padding-bottom: 80px;
       }
       .footer-col h4 {
         font-size: 1.2rem;
@@ -440,13 +405,30 @@
       .footer-col a:hover {
         color: var(--secondary-color);
       }
+      .footer-col .map-container {
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        height: 100%;
+        min-height: 220px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .footer-col .map-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+      .footer-col .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
       .footer-bottom {
         text-align: center;
         padding: 20px 0;
         border-top: 1px solid #444;
       }
 
-      /* === ***NÚT GỌI & ZALO NỔI (ĐÃ CẬP NHẬT)*** === */
+      /* === NÚT GỌI & ZALO NỔI === */
       .floating-buttons {
         position: fixed;
         bottom: 20px;
@@ -485,19 +467,13 @@
       }
 
       /* === RESPONSIVE DESIGN === */
-      @media (max-width: 992px) {
-        .hero h1 {
-          font-size: 2.8rem;
-        }
-        .about-grid {
-          grid-template-columns: 1fr;
-        }
-        .about-grid img {
-          margin-bottom: 30px;
-        }
-      }
-
       @media (max-width: 768px) {
+        section {
+          padding: 40px 0;
+        }
+        .section-title {
+          font-size: 2rem;
+        }
         .top-bar {
           display: none;
         }
@@ -530,23 +506,29 @@
           display: block;
           padding: 15px;
           text-align: center;
+          font-size: 1rem;
         }
-
         .hero {
           height: 70vh;
         }
         .hero h1 {
-          font-size: 2rem;
+          font-size: 2.2rem;
+          line-height: 1.3;
         }
         .hero p {
-          font-size: 1rem;
+          font-size: 1.1rem;
+          margin-bottom: 25px;
         }
-        .section-title {
-          font-size: 2rem;
+        .btn {
+          padding: 12px 28px;
+          font-size: 0.9rem;
         }
-
+        .about-grid,
         .process-grid {
           grid-template-columns: 1fr;
+        }
+        .about-grid img {
+          margin-bottom: 30px;
         }
         .process-grid .arrow {
           display: none;
@@ -579,15 +561,15 @@
         >
           <path
             fill="#2962ff"
-            d="M15,36V6.827l-1.211-0.811C8.64,8.083,5,13.112,5,19v10c0,7.732,6.268,14,14,14h10	c4.722,0,8.883-2.348,11.417-5.931V36H15z"
+            d="M15,36V6.827l-1.211-0.811C8.64,8.083,5,13.112,5,19v10c0,7.732,6.268,14,14,14h10  c4.722,0,8.883-2.348,11.417-5.931V36H15z"
           ></path>
           <path
             fill="#eee"
-            d="M29,5H19c-1.845,0-3.601,0.366-5.214,1.014C10.453,9.25,8,14.528,8,19	c0,6.771,0.936,10.735,3.712,14.607c0.216,0.301,0.357,0.653,0.376,1.022c0.043,0.835-0.129,2.365-1.634,3.742	c-0.162,0.148-0.059,0.419,0.16,0.428c0.942,0.041,2.843-0.014,4.797-0.877c0.557-0.246,1.191-0.203,1.729,0.083	C20.453,39.764,24.333,40,28,40c4.676,0,9.339-1.04,12.417-2.916C42.038,34.799,43,32.014,43,29V19C43,11.268,36.732,5,29,5z"
+            d="M29,5H19c-1.845,0-3.601,0.366-5.214,1.014C10.453,9.25,8,14.528,8,19  c0,6.771,0.936,10.735,3.712,14.607c0.216,0.301,0.357,0.653,0.376,1.022c0.043,0.835-0.129,2.365-1.634,3.742  c-0.162,0.148-0.059,0.419,0.16,0.428c0.942,0.041,2.843-0.014,4.797-0.877c0.557-0.246,1.191-0.203,1.729,0.083  C20.453,39.764,24.333,40,28,40c4.676,0,9.339-1.04,12.417-2.916C42.038,34.799,43,32.014,43,29V19C43,11.268,36.732,5,29,5z"
           ></path>
           <path
             fill="#2962ff"
-            d="M36.75,27C34.683,27,33,25.317,33,23.25s1.683-3.75,3.75-3.75s3.75,1.683,3.75,3.75	S38.817,27,36.75,27z M36.75,21c-1.24,0-2.25,1.01-2.25,2.25s1.01,2.25,2.25,2.25S39,24.49,39,23.25S37.99,21,36.75,21z"
+            d="M36.75,27C34.683,27,33,25.317,33,23.25s1.683-3.75,3.75-3.75s3.75,1.683,3.75,3.75 S38.817,27,36.75,27z M36.75,21c-1.24,0-2.25,1.01-2.25,2.25s1.01,2.25,2.25,2.25S39,24.49,39,23.25S37.99,21,36.75,21z"
           ></path>
           <path
             fill="#2962ff"
@@ -595,11 +577,11 @@
           ></path>
           <path
             fill="#2962ff"
-            d="M27,19.75v0.519c-0.629-0.476-1.403-0.769-2.25-0.769c-2.067,0-3.75,1.683-3.75,3.75	S22.683,27,24.75,27c0.847,0,1.621-0.293,2.25-0.769V26.5c0,0.276,0.224,0.5,0.5,0.5h1v-7.25H27z M24.75,25.5	c-1.24,0-2.25-1.01-2.25-2.25S23.51,21,24.75,21S27,22.01,27,23.25S25.99,25.5,24.75,25.5z"
+            d="M27,19.75v0.519c-0.629-0.476-1.403-0.769-2.25-0.769c-2.067,0-3.75,1.683-3.75,3.75  S22.683,27,24.75,27c0.847,0,1.621-0.293,2.25-0.769V26.5c0,0.276,0.224,0.5,0.5,0.5h1v-7.25H27z M24.75,25.5 c-1.24,0-2.25-1.01-2.25-2.25S23.51,21,24.75,21S27,22.01,27,23.25S25.99,25.5,24.75,25.5z"
           ></path>
           <path
             fill="#2962ff"
-            d="M21.25,18h-8v1.5h5.321L13,26h0.026c-0.163,0.211-0.276,0.463-0.276,0.75V27h7.5	c0.276,0,0.5-0.224,0.5-0.5v-1h-5.321L21,19h-0.026c0.163-0.211,0.276-0.463,0.276-0.75V18z"
+            d="M21.25,18h-8v1.5h5.321L13,26h0.026c-0.163,0.211-0.276,0.463-0.276,0.75V27h7.5  c0.276,0,0.5-0.224,0.5-0.5v-1h-5.321L21,19h-0.026c0.163-0.211,0.276-0.463,0.276-0.75V18z"
           ></path>
         </svg>
       </a>
@@ -621,13 +603,16 @@
 
     <header class="navbar">
       <div class="container">
-        <a href="#" class="logo">CÔNG TY ĐỨC MINH</a>
+        <a href="#hero" class="logo">CÔNG TY ĐỨC MINH</a>
         <nav>
           <ul class="nav-links" id="nav-links">
             <li><a href="#hero">Trang Chủ</a></li>
             <li><a href="#about">Giới Thiệu</a></li>
-            <li><a href="#machines">Danh Mục Thu Mua</a></li>
+            <li><a href="#why-us">Vì Sao Chọn Chúng Tôi</a></li>
+            <li><a href="#categories">Danh Mục Thu Mua</a></li>
             <li><a href="#prices">Bảng Giá</a></li>
+            <li><a href="#old-machines">Máy Móc Cũ</a></li>
+            <li><a href="#process">Quy Trình</a></li>
             <li><a href="#footer">Liên Hệ</a></li>
           </ul>
         </nav>
@@ -644,24 +629,24 @@
         <div
           class="slide active"
           style="
-            background-image: url('https://github.com/quang3215/Duc-Minh/blob/main/img/1.jpg?raw=true');
-          "
-        ></div>
-        <div
-          class="slide"
-          style="
             background-image: url('https://github.com/quang3215/Duc-Minh/blob/main/img/3.jpg?raw=true');
           "
         ></div>
         <div
           class="slide"
           style="
-            background-image: url('https://via.placeholder.com/1920x1080/556B2F/FFFFFF?text=Ảnh+Banner+3');
+            background-image: url('https://github.com/quang3215/Duc-Minh/blob/main/img/2.jpg?raw=true');
+          "
+        ></div>
+        <div
+          class="slide"
+          style="
+            background-image: url('https://github.com/quang3215/Duc-Minh/blob/main/img/phe-lieu-cong-trinh.jpg?raw=true');
           "
         ></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <h1>THU MUA PHẾ LIỆU GIÁ CAO NHẤT THỊ TRƯỜNG</h1>
+          <h1>THU MUA VẬT TƯ TỒN KHO - PHẾ LIỆU GIÁ CAO</h1>
           <p>Uy Tín - Chuyên Nghiệp - Nhanh Chóng - Tận Nơi</p>
           <a href="tel:0936350118" class="btn">Gọi ngay 0936.350.118</a>
         </div>
@@ -672,7 +657,7 @@
           <div class="about-image">
             <img
               src="https://github.com/quang3215/Duc-Minh/blob/main/img/z7144907590493_88e971a97f72309a344918b985a54251.jpg?raw=true"
-              alt="Giới thiệu công ty"
+              alt="Giới thiệu công ty Đức Minh"
             />
           </div>
           <div class="about-text">
@@ -685,18 +670,9 @@
               gian và không gian.
             </p>
             <p>
-              Vì vậy, chúng tôi mang đến dịch vụ thu mua tận nơi, chuyên nghiệp,
-              giúp quý khách hàng giải phóng mặt bằng và thu hồi vốn nhanh chóng
-              với mức giá cạnh tranh nhất thị trường.
-            </p>
-            <p>
-              Với hơn 10 năm kinh nghiệm trong lĩnh vực thu mua phế liệu, chúng
-              tôi tự hào là đối tác tin cậy của hàng ngàn khách hàng cá nhân và
-              doanh nghiệp trên toàn quốc.
-            </p>
-            <p>
-              Phương châm của chúng tôi là "Luôn đặt lợi ích của khách hàng lên
-              hàng đầu", cam kết mang đến dịch vụ tốt nhất với mức giá cao nhất.
+              Với hơn 10 năm kinh nghiệm, chúng tôi mang đến dịch vụ thu mua tận
+              nơi, chuyên nghiệp, giúp quý khách hàng giải phóng mặt bằng và thu
+              hồi vốn nhanh chóng với mức giá cạnh tranh nhất thị trường.
             </p>
             <ul>
               <li>Thu mua tận nơi nhanh chóng, không ngại xa.</li>
@@ -704,74 +680,6 @@
               <li>Cân đo chính xác, minh bạch.</li>
               <li>Thanh toán một lần ngay tại chỗ.</li>
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="machines" style="background: var(--bg-grey)">
-        <div class="container">
-          <h2 class="section-title">DANH MỤC THU MUA CỦA CHÚNG TÔI</h2>
-          <div class="machines-grid">
-            <div class="machine-item">
-              <img
-                src="https://github.com/quang3215/Duc-Minh/blob/main/img/z7144907590493_88e971a97f72309a344918b985a54251.jpg?raw=true"
-                alt="Cáp Điện & Dây Điện"
-              />
-              <div class="caption">
-                <span class="check-icon">✓</span>
-                <span>Cáp Điện & Dây Điện</span>
-              </div>
-            </div>
-            <div class="machine-item">
-              <img
-                src="https://github.com/quang3215/Duc-Minh/blob/main/img/z7144907590493_88e971a97f72309a344918b985a54251.jpg?raw=true"
-                alt="Thiết Bị Điện & Tủ Điện"
-              />
-              <div class="caption">
-                <span class="check-icon">✓</span>
-                <span>Thiết Bị Điện & Tủ Điện</span>
-              </div>
-            </div>
-            <div class="machine-item">
-              <img
-                src="https://github.com/quang3215/Duc-Minh/blob/main/img/z7144907590493_88e971a97f72309a344918b985a54251.jpg?raw=true"
-                alt="Vật Tư Năng Lượng Mặt Trời"
-              />
-              <div class="caption">
-                <span class="check-icon">✓</span>
-                <span>Vật Tư Năng Lượng Mặt Trời</span>
-              </div>
-            </div>
-            <div class="machine-item">
-              <img
-                src="https://github.com/quang3215/Duc-Minh/blob/main/img/z7144907590493_88e971a97f72309a344918b985a54251.jpg?raw=true"
-                alt="Thiết Bị, Máy Móc Khác"
-              />
-              <div class="caption">
-                <span class="check-icon">✓</span>
-                <span>Thiết Bị, Máy Móc Khác</span>
-              </div>
-            </div>
-            <div class="machine-item">
-              <img
-                src="https://github.com/quang3215/Duc-Minh/blob/main/img/z7144907590493_88e971a97f72309a344918b985a54251.jpg?raw=true"
-                alt="Tvật tư, thiết bị tồn kho khác"
-              />
-              <div class="caption">
-                <span class="check-icon">✓</span>
-                <span>vật tư, thiết bị tồn kho khác</span>
-              </div>
-            </div>
-            <div class="machine-item">
-              <img
-                src="https://github.com/quang3215/Duc-Minh/blob/main/img/z7144907590493_88e971a97f72309a344918b985a54251.jpg?raw=true"
-                alt="PHế Liệu Công Trình"
-              />
-              <div class="caption">
-                <span class="check-icon">✓</span>
-                <span>PHế Liệu Công Trình</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -819,7 +727,75 @@
         </div>
       </section>
 
-      <section id="prices">
+      <section id="categories">
+        <div class="container">
+          <h2 class="section-title">DANH MỤC THU MUA CỦA CHÚNG TÔI</h2>
+          <div class="machines-grid">
+            <div class="machine-item">
+              <img
+                src="https://github.com/quang3215/Duc-Minh/blob/main/img/cap-dien.jpg?raw=true"
+                alt="Cáp Điện & Dây Điện"
+              />
+              <div class="caption">
+                <span class="check-icon">✓</span>
+                <span>Cáp Điện & Dây Điện</span>
+              </div>
+            </div>
+            <div class="machine-item">
+              <img
+                src="https://github.com/quang3215/Duc-Minh/blob/main/img/thiet-bi-dien.jpg?raw=true"
+                alt="Thiết Bị Điện & Tủ Điện"
+              />
+              <div class="caption">
+                <span class="check-icon">✓</span>
+                <span>Thiết Bị Điện & Tủ Điện</span>
+              </div>
+            </div>
+            <div class="machine-item">
+              <img
+                src="https://github.com/quang3215/Duc-Minh/blob/main/img/nang-luong-mat-troi.jpg?raw=true"
+                alt="Vật Tư Năng Lượng Mặt Trời"
+              />
+              <div class="caption">
+                <span class="check-icon">✓</span>
+                <span>Vật Tư Năng Lượng Mặt Trời</span>
+              </div>
+            </div>
+            <div class="machine-item">
+              <img
+                src="https://github.com/quang3215/Duc-Minh/blob/main/img/vat-tu-ton-kho.jpg?raw=true"
+                alt="Vật tư, thiết bị tồn kho khác"
+              />
+              <div class="caption">
+                <span class="check-icon">✓</span>
+                <span>Vật Tư Tồn Kho Khác</span>
+              </div>
+            </div>
+            <div class="machine-item">
+              <img
+                src="https://github.com/quang3215/Duc-Minh/blob/main/img/phe-lieu-cong-trinh.jpg?raw=true"
+                alt="Phế Liệu Công Trình"
+              />
+              <div class="caption">
+                <span class="check-icon">✓</span>
+                <span>Phế Liệu Công Trình</span>
+              </div>
+            </div>
+            <div class="machine-item">
+              <img
+                src="https://github.com/quang3215/Duc-Minh/blob/main/img/nha-xuong.jpg?raw=true"
+                alt="Thanh Lý Nhà Xưởng"
+              />
+              <div class="caption">
+                <span class="check-icon">✓</span>
+                <span>Thanh Lý Nhà Xưởng</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="prices" style="background: var(--bg-grey)">
         <div class="container">
           <h2 class="section-title">Bảng Giá Thu Mua Hôm Nay</h2>
           <p class="section-subtitle">
@@ -878,13 +854,13 @@
         </div>
       </section>
 
-      <section id="machines1" style="background: var(--bg-grey)">
+      <section id="old-machines">
         <div class="container">
           <h2 class="section-title">THU MUA CÁC LOẠI MÁY MÓC CŨ</h2>
-          <div class="machines1-grid">
-            <div class="machine1-item">
+          <div class="machines-grid">
+            <div class="machine-item">
               <img
-                src="https://via.placeholder.com/400x300/cccccc/FFFFFF?text=Máy+tiện+cũ"
+                src="https://github.com/quang3215/Duc-Minh/blob/main/img/may-tien.jpg?raw=true"
                 alt="Thu mua máy tiện cũ"
               />
               <div class="caption">
@@ -892,9 +868,9 @@
                 <span>Thu mua máy tiện cũ</span>
               </div>
             </div>
-            <div class="machine1-item">
+            <div class="machine-item">
               <img
-                src="https://via.placeholder.com/400x300/cccccc/FFFFFF?text=Máy+dập+cũ"
+                src="https://github.com/quang3215/Duc-Minh/blob/main/img/may-dap.jpg?raw=true"
                 alt="Thu mua máy dập cũ"
               />
               <div class="caption">
@@ -902,9 +878,9 @@
                 <span>Thu mua máy dập cũ</span>
               </div>
             </div>
-            <div class="machine1-item">
+            <div class="machine-item">
               <img
-                src="https://via.placeholder.com/400x300/cccccc/FFFFFF?text=Máy+bơm+cũ"
+                src="https://github.com/quang3215/Duc-Minh/blob/main/img/may-bom.jpg?raw=true"
                 alt="Thu mua máy bơm cũ"
               />
               <div class="caption">
@@ -912,9 +888,9 @@
                 <span>Thu mua máy bơm cũ</span>
               </div>
             </div>
-            <div class="machine1-item">
+            <div class="machine-item">
               <img
-                src="https://via.placeholder.com/400x300/cccccc/FFFFFF?text=Máy+nén+khí+cũ"
+                src="https://github.com/quang3215/Duc-Minh/blob/main/img/may-nen-khi.jpg?raw=true"
                 alt="Thu mua máy nén khí cũ"
               />
               <div class="caption">
@@ -922,9 +898,9 @@
                 <span>Thu mua máy nén khí cũ</span>
               </div>
             </div>
-            <div class="machine1-item">
+            <div class="machine-item">
               <img
-                src="https://via.placeholder.com/400x300/cccccc/FFFFFF?text=Máy+hàn+cũ"
+                src="https://github.com/quang3215/Duc-Minh/blob/main/img/may-han.jpg?raw=true"
                 alt="Thu mua máy hàn cũ"
               />
               <div class="caption">
@@ -932,9 +908,9 @@
                 <span>Thu mua máy hàn cũ</span>
               </div>
             </div>
-            <div class="machine1-item">
+            <div class="machine-item">
               <img
-                src="https://via.placeholder.com/400x300/cccccc/FFFFFF?text=Máy+phát+điện+cũ"
+                src="https://github.com/quang3215/Duc-Minh/blob/main/img/may-phat-dien.jpg?raw=true"
                 alt="Thu mua máy phát điện cũ"
               />
               <div class="caption">
@@ -946,7 +922,7 @@
         </div>
       </section>
 
-      <section id="process">
+      <section id="process" style="background: var(--bg-grey)">
         <div class="container">
           <h2 class="section-title">QUY TRÌNH THU MUA CHUYÊN NGHIỆP</h2>
           <div class="process-grid">
@@ -996,9 +972,9 @@
           <div class="footer-col">
             <h4>CÔNG TY TNHH ĐỨC MINH</h4>
             <p>
-              Chuyên thu mua vật tư, thiết bị điện tồn kho từ các công trình, dự
-              án. Chúng tôi là giải pháp giúp bạn thu hồi vốn nhanh chóng và
-              giải phóng mặt bằng hiệu quả.
+              Đơn vị hàng đầu chuyên thu mua vật tư công trình, thiết bị điện và
+              phế liệu dự án giá cao, cam kết mang lại giá trị thu hồi tối đa
+              cho đối tác.
             </p>
           </div>
           <div class="footer-col">
@@ -1019,35 +995,68 @@
           <div class="footer-col">
             <h4>Dịch Vụ Chính</h4>
             <ul>
-              <li><a href="#">Thu mua cáp điện & dây điện</a></li>
-              <li><a href="#">Thu mua vật tư, thiết bị tồn kho</a></li>
-              <li><a href="#">Thu mua phế liệu Đồng, Nhôm, Sắt</a></li>
-              <li><a href="#">Thu mua máy móc công nghiệp cũ</a></li>
-              <li><a href="#">Thanh lý nhà xưởng, công trình</a></li>
+              <li><a href="#categories">Thu mua cáp điện & dây điện</a></li>
+              <li>
+                <a href="#categories">Thu mua vật tư, thiết bị tồn kho</a>
+              </li>
+              <li><a href="#prices">Thu mua phế liệu Đồng, Nhôm, Sắt</a></li>
+              <li>
+                <a href="#old-machines">Thu mua máy móc công nghiệp cũ</a>
+              </li>
+              <li><a href="#about">Thanh lý nhà xưởng, công trình</a></li>
             </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Bản Đồ</h4>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.7009919352004!2d106.63376947534081!3d10.910313556709253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d70677247829%3A0xab4886d2a9b58705!2zQ8OUTkcgVFkgVEhVIE1VQSBQSOG6viBMSeG7hlUgxJDhu6hDIE1JTkg!5e0!3m2!1svi!2s!4v1761195576845!5m2!1svi!2s"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>
-          &copy; 2025 Bản quyền thuộc về [Đức Minh]. Thiết kế bởi MinhQuang.
-        </p>
+        <p>© 2025 Bản quyền thuộc về Đức Minh. Thiết kế bởi MinhQuang.</p>
       </div>
     </footer>
 
     <script>
       // === CODE JAVASCRIPT ===
-
       const menuIcon = document.getElementById("menu-icon");
       const navLinks = document.getElementById("nav-links");
       const allNavLinks = document.querySelectorAll("#nav-links a");
+      const sections = document.querySelectorAll("main section");
 
-      // 1. Mobile Menu Toggle
+      const handleScroll = () => {
+        let current = "hero";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 150) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        allNavLinks.forEach((link) => {
+          link.classList.remove("active");
+          // Sửa lại điều kiện so sánh để chính xác hơn
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+          }
+        });
+      };
+
+      document.addEventListener("DOMContentLoaded", handleScroll);
+      window.addEventListener("scroll", handleScroll);
+
       menuIcon.addEventListener("click", () => {
         navLinks.classList.toggle("active");
       });
 
-      // 2. Tự động đóng menu khi bấm vào một mục trên mobile
       allNavLinks.forEach((link) => {
         link.addEventListener("click", () => {
           if (navLinks.classList.contains("active")) {
@@ -1056,10 +1065,9 @@
         });
       });
 
-      // 3. Simple Slideshow
       let currentSlide = 0;
       const slides = document.querySelectorAll(".hero .slide");
-      const slideInterval = 5000; // 5 giây
+      const slideInterval = 5000;
 
       function nextSlide() {
         slides[currentSlide].classList.remove("active");
@@ -1067,29 +1075,6 @@
         slides[currentSlide].classList.add("active");
       }
       setInterval(nextSlide, slideInterval);
-
-      // ***MỚI: Tự động highlight menu khi cuộn trang***
-      const sections = document.querySelectorAll("main section"); // Lấy tất cả các section
-
-      window.addEventListener("scroll", () => {
-        let current = "";
-
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop; // Vị trí top của section
-          // Thêm 150px để menu được highlight ngay trước khi section chạm đỉnh màn hình
-          if (pageYOffset >= sectionTop - 150) {
-            current = section.getAttribute("id");
-          }
-        });
-
-        allNavLinks.forEach((link) => {
-          link.classList.remove("active");
-          // Nếu href của link chứa id của section hiện tại
-          if (link.getAttribute("href").includes(current)) {
-            link.classList.add("active");
-          }
-        });
-      });
     </script>
   </body>
 </html>
