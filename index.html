@@ -10,7 +10,7 @@
     <style>
       /* === CÀI ĐẶT CHUNG & BIẾN MÀU === */
       :root {
-        --primary-color: #006400; /* Xanh lá đậm */
+        --primary-color: #e90b0b; /* Xanh lá đậm */
         --secondary-color: #ff8c00; /* Cam đậm cho nút CTA */
         --phone-color: #d9534f; /* Màu đỏ cho nút gọi */
         --zalo-color: #0068ff; /* Màu xanh cho nút Zalo */
@@ -283,7 +283,7 @@
         color: #d9534f;
       }
 
-      /* === PHẦN MÁY MÓC CŨ === */
+      /* === PHẦN sản phẩm thu mua === */
       .machines-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -314,6 +314,49 @@
         font-weight: 500;
       }
       .machine-item .caption .check-icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: #dff0d8;
+        color: #3c763d;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 20px;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      /* === PHẦN MÁY MÓC CŨ === */
+      .machines1-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+      }
+      .machine1-item {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--bg-light);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .machine1-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      }
+      .machine1-item img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+      .machine1-item .caption {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+      }
+      .machine1-item .caption .check-icon {
         display: inline-block;
         width: 20px;
         height: 20px;
@@ -601,13 +644,13 @@
         <div
           class="slide active"
           style="
-            background-image: url('https://via.placeholder.com/1920x1080/006400/FFFFFF?text=Ảnh+Banner+1');
+            background-image: url('https://github.com/quang3215/Duc-Minh/blob/main/img/1.jpg?raw=true');
           "
         ></div>
         <div
           class="slide"
           style="
-            background-image: url('https://via.placeholder.com/1920x1080/2E8B57/FFFFFF?text=Ảnh+Banner+2');
+            background-image: url('https://github.com/quang3215/Duc-Minh/blob/main/img/3.jpg?raw=true');
           "
         ></div>
         <div
@@ -778,7 +821,7 @@
 
       <section id="prices">
         <div class="container">
-          <h2 class="section-title">Bảng Giá Phế Liệu Hôm Nay</h2>
+          <h2 class="section-title">Bảng Giá Thu Mua Hôm Nay</h2>
           <p class="section-subtitle">
             Giá có thể thay đổi, vui lòng gọi hotline để có giá chính xác nhất
           </p>
@@ -835,11 +878,11 @@
         </div>
       </section>
 
-      <section id="machines" style="background: var(--bg-grey)">
+      <section id="machines1" style="background: var(--bg-grey)">
         <div class="container">
           <h2 class="section-title">THU MUA CÁC LOẠI MÁY MÓC CŨ</h2>
-          <div class="machines-grid">
-            <div class="machine-item">
+          <div class="machines1-grid">
+            <div class="machine1-item">
               <img
                 src="https://via.placeholder.com/400x300/cccccc/FFFFFF?text=Máy+tiện+cũ"
                 alt="Thu mua máy tiện cũ"
@@ -849,7 +892,7 @@
                 <span>Thu mua máy tiện cũ</span>
               </div>
             </div>
-            <div class="machine-item">
+            <div class="machine1-item">
               <img
                 src="https://via.placeholder.com/400x300/cccccc/FFFFFF?text=Máy+dập+cũ"
                 alt="Thu mua máy dập cũ"
@@ -859,7 +902,7 @@
                 <span>Thu mua máy dập cũ</span>
               </div>
             </div>
-            <div class="machine-item">
+            <div class="machine1-item">
               <img
                 src="https://via.placeholder.com/400x300/cccccc/FFFFFF?text=Máy+bơm+cũ"
                 alt="Thu mua máy bơm cũ"
@@ -869,7 +912,7 @@
                 <span>Thu mua máy bơm cũ</span>
               </div>
             </div>
-            <div class="machine-item">
+            <div class="machine1-item">
               <img
                 src="https://via.placeholder.com/400x300/cccccc/FFFFFF?text=Máy+nén+khí+cũ"
                 alt="Thu mua máy nén khí cũ"
@@ -879,7 +922,7 @@
                 <span>Thu mua máy nén khí cũ</span>
               </div>
             </div>
-            <div class="machine-item">
+            <div class="machine1-item">
               <img
                 src="https://via.placeholder.com/400x300/cccccc/FFFFFF?text=Máy+hàn+cũ"
                 alt="Thu mua máy hàn cũ"
@@ -889,7 +932,7 @@
                 <span>Thu mua máy hàn cũ</span>
               </div>
             </div>
-            <div class="machine-item">
+            <div class="machine1-item">
               <img
                 src="https://via.placeholder.com/400x300/cccccc/FFFFFF?text=Máy+phát+điện+cũ"
                 alt="Thu mua máy phát điện cũ"
@@ -953,8 +996,9 @@
           <div class="footer-col">
             <h4>CÔNG TY TNHH ĐỨC MINH</h4>
             <p>
-              Là đơn vị hàng đầu trong lĩnh vực thu mua phế liệu công nghiệp và
-              dân dụng, cam kết mang lại giá trị cao nhất cho khách hàng.
+              Chuyên thu mua vật tư, thiết bị điện tồn kho từ các công trình, dự
+              án. Chúng tôi là giải pháp giúp bạn thu hồi vốn nhanh chóng và
+              giải phóng mặt bằng hiệu quả.
             </p>
           </div>
           <div class="footer-col">
@@ -975,10 +1019,11 @@
           <div class="footer-col">
             <h4>Dịch Vụ Chính</h4>
             <ul>
-              <li><a href="#">Thu mua phế liệu Sắt</a></li>
-              <li><a href="#">Thu mua phế liệu Đồng</a></li>
-              <li><a href="#">Thu mua phế liệu Nhôm</a></li>
-              <li><a href="#">Thanh lý nhà xưởng</a></li>
+              <li><a href="#">Thu mua cáp điện & dây điện</a></li>
+              <li><a href="#">Thu mua vật tư, thiết bị tồn kho</a></li>
+              <li><a href="#">Thu mua phế liệu Đồng, Nhôm, Sắt</a></li>
+              <li><a href="#">Thu mua máy móc công nghiệp cũ</a></li>
+              <li><a href="#">Thanh lý nhà xưởng, công trình</a></li>
             </ul>
           </div>
         </div>
